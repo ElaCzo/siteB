@@ -6,8 +6,15 @@ const app = express();
 const port = 3000;
 
 // Middleware pour activer CORS et la gestion des cookies.
-app.use(cors({ origin: 'http://sitea.pro', credentials: true }));
+app.use(cors({ origin: 'https://sitea.pro', credentials: true }));
 app.use(cookieParser());
+
+// Route pour servir votre page HTML supplémentaire
+app.get('/', (req, res) => {
+    console.log('bla');
+    console.log(__dirname + '/public/index.html');
+    res.sendFile(__dirname + '/public/index.html');
+  });
 
 // Endpoint pour l'exemple.
 app.get('/exemple-api', (req, res) => {
