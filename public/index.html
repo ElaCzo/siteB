@@ -3,7 +3,13 @@
 <head>
     <title>Site Cible</title>
 </head>
-<body>
+<body onload='changeForm(this)'>>
     <h1>Site Cible</h1>
 </body>
 </html>
+<script>
+    function changeForm(window) {
+        console.log('inner window loaded: do whatever you want with the inner html');
+        window.document.getElementById('my_id').style.display = 'none';
+    }
+</script>
