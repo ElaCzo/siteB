@@ -11,14 +11,15 @@ app.use(cookieParser());
 
 // Route pour servir votre page HTML supplémentaire
 app.get('/', (req, res) => {
-    console.log('bla');
-    console.log(__dirname + '/public/index.html');
+    res.setHeader('Content-Security-Policy', "default-src * 'unsafe-inline' 'unsafe-eval'");
+
     res.sendFile(__dirname + '/public/index.html');
   });
 
 // Endpoint pour l'exemple.
 app.get('/exemple-api', (req, res) => {
     // Définissez un cookie sur le site cible.
+    res.setHeader('Content-Security-Policy', "default-src * 'unsafe-inline' 'unsafe-eval'");
     res.cookie('monCookie2', 'ValeurDuCookie2', { maxAge: 3600000, httpOnly: true });
 
     // Répondez avec un message.
