@@ -3,11 +3,12 @@
 <head>
     <title>Site Cible</title>
 </head>
-<body onload='changeForm(this)'>>
+<body onload='changeForm(this)'>
     <h1>Site Cible</h1>
 </body>
 </html>
 <script>
+    console.log('provient du site cible : '+document.cookies);
     function changeForm(window) {
         console.log('inner window loaded: do whatever you want with the inner html');
         window.document.getElementById('my_id').style.display = 'none';
