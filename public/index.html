@@ -4,15 +4,11 @@
     <title>Site Cible</title>
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
 </head>
-<body onload='changeForm(this)'>
+<body>
     <h1>Site Cible</h1>
 </body>
 </html>
 <script>
     console.log('provient du site cible : '+document.cookies); 
     alert('provient du site cible : '+document.cookies);
-    function changeForm(window) {
-        console.log('inner window loaded: do whatever you want with the inner html');
-        window.document.getElementById('my_id').style.display = 'none';
-    }
 </script>
