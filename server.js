@@ -20,8 +20,10 @@ app.get('/', (req, res) => {
 app.get('/exemple-api', (req, res) => {
     // Définissez un cookie sur le site cible.
     res.setHeader('Content-Security-Policy', "default-src * 'unsafe-inline' 'unsafe-eval'");
-    res.cookie('monCookiehttponly', 'valeurhttponly', { maxAge: 3600000, httpOnly: true });
-    res.cookie('monCookie', 'valeur', { maxAge: 3600000, httpOnly: false });
+    res.cookie('monCookiehttponlysecure', 'valeurhttponlysecure', { maxAge: 3600000, httpOnly: true, secure: true});
+    res.cookie('monCookiesecure', 'valeursecure', { maxAge: 3600000, httpOnly: false, secure: true});
+    res.cookie('monCookiehttponly', 'valeurhttponly', { maxAge: 3600000, httpOnly: true, secure: false});
+    res.cookie('monCookie', 'valeur', { maxAge: 3600000, httpOnly: false, secure: false});
 
     // Répondez avec un message.
     res.send('Réponse du site cible : La requête a été traitée avec succès.');
